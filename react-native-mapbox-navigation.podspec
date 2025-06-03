@@ -47,7 +47,7 @@ Pod::Spec.new do |s|
 
   s.dependency "React-Core"
   s.dependency "MapboxNavigation", "~> 2.14.0"
-  s.dependency "MapboxMaps", "10.14.0"
+  s.dependency "MapboxMaps", "11.8.0"
   s.dependency "Turf", "3.0.0"
 
   s.swift_version = "5.0"
