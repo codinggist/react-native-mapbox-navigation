@@ -39,13 +39,16 @@ Pod::Spec.new do |s|
   s.homepage     = "https://github.com/homeeondemand/react-native-mapbox-navigation"
   s.license    = { :type => "MIT", :file => "LICENSE" }
   s.authors      = { "HOMEE" => "support@homee.com" }
-  s.platforms    = { :ios => "11.0" }
+  s.platforms    = { :ios => "12.0" }
   s.source       = { :git => "https://github.com/homeeondemand/react-native-mapbox-navigation.git", :tag => "#{s.version}" }
 
   s.source_files = "ios/**/*.{h,m,swift}"
   s.requires_arc = true
 
   s.dependency "React-Core"
-  s.dependency "MapboxNavigation", "~> 2.1.1"
+  s.dependency "MapboxNavigation", "~> 2.12.0"
+  s.dependency "Turf", "3.0.0"
+
+  s.swift_version = "5.0"
 end
 
