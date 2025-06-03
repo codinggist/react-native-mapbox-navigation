@@ -6,7 +6,7 @@ Smart Mapbox turn-by-turn routing based on real-time traffic for React Native. A
 
 ## Features
 
-- A full-fledged turn-by-turn navigation UI for iPhone, iPad, and CarPlay that’s ready to drop into your application
+- A full-fledged turn-by-turn navigation UI for iPhone, iPad, and CarPlay that's ready to drop into your application
 - [Professionally designed map styles](https://www.mapbox.com/maps/) for daytime and nighttime driving
 - Worldwide driving, cycling, and walking directions powered by [open data](https://www.mapbox.com/about/open/) and user feedback
 - Traffic avoidance and proactive rerouting based on current conditions in [over 55 countries](https://docs.mapbox.com/help/how-mapbox-works/directions/#traffic-data)
@@ -27,9 +27,50 @@ Before installing the SDK, you will need to gather the appropriate credentials. 
 
 ## Installation
 
-```
+```sh
 npm install @homee/react-native-mapbox-navigation
+# or
+yarn add @homee/react-native-mapbox-navigation
 ```
+
+### iOS Installation
+
+This package requires Mapbox to be installed via Swift Package Manager (SPM). Follow these steps:
+
+1. Open your iOS project in Xcode:
+   ```sh
+   cd ios
+   open YourApp.xcworkspace
+   ```
+
+2. Add Mapbox packages via SPM:
+   - In Xcode, go to File > Add Packages...
+   - Add the following packages:
+     ```
+     https://github.com/mapbox/mapbox-navigation-ios.git
+     https://github.com/mapbox/mapbox-maps-ios.git
+     ```
+   - Select the following products:
+     - MapboxNavigation
+     - MapboxMaps
+     - Turf
+
+3. Make sure to add the following to your Info.plist:
+   ```xml
+   <key>NSLocationWhenInUseUsageDescription</key>
+   <string>Shows your location on the map and helps improve the map</string>
+   <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+   <string>Shows your location on the map and helps improve the map</string>
+   <key>MGLMapboxAccessToken</key>
+   <string>YOUR_MAPBOX_ACCESS_TOKEN</string>
+   ```
+
+4. Clean and rebuild your project:
+   ```sh
+   cd ios
+   pod deintegrate
+   pod install
+   ```
 
 Read the iOS specific instructions below before running `pod install`.
 
@@ -50,11 +91,11 @@ Make sure your react native project has an Objective-C bridging header for swift
 1. Name your file Dummy or whatever you want
 1. In the Group dropdown, make sure to select the group folder for your app, not the project itself.
 
-After you create the Swift file, you should be prompted to choose if you want to configure an Objective-C Bridging Header. Select “Create Bridging Header”.
+After you create the Swift file, you should be prompted to choose if you want to configure an Objective-C Bridging Header. Select "Create Bridging Header".
 
 ![bridging header](img/bridging-header.png)
 
-This file is usually named YourProject-Bridging-Header.h. Don’t change this name manually, because Xcode configures the project with this exact filename.
+This file is usually named YourProject-Bridging-Header.h. Don't change this name manually, because Xcode configures the project with this exact filename.
 
 </details>
 

@@ -35,6 +35,7 @@ Pod::Spec.new do |s|
   s.summary      = package["description"]
   s.description  = <<-DESC
                   Smart Mapbox turn-by-turn routing based on real-time traffic for React Native.
+                  This version requires Mapbox to be installed via Swift Package Manager.
                    DESC
   s.homepage     = "https://github.com/homeeondemand/react-native-mapbox-navigation"
   s.license    = { :type => "MIT", :file => "LICENSE" }
@@ -46,10 +47,6 @@ Pod::Spec.new do |s|
   s.requires_arc = true
 
   s.dependency "React-Core"
-  s.dependency "MapboxNavigation", "~> 3.0.0"
-  s.dependency "MapboxMaps", "11.8.0"
-  s.dependency "Turf", "3.0.0"
-
   s.swift_version = "5.0"
 end
 
